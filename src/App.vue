@@ -1,19 +1,15 @@
 <template>
   <div id="app">
     <p>weather for: </p>
-    <input type="text" placeholder="zip code" v-model="zip">
+    <input type="text" placeholder="zip code" v-model="zip" @keyup.13="weather">
     <h3>Zip: {{zip}}</h3>
-    <div v-if="getWeather.data.list != ''">
       <ul v-for="temp in getWeather.data.list" :key="temp.weather.id">
         <li>{{temp.main.temp}} F</li>
       </ul>
-    </div>
-    
   </div>
 </template>
 
 <script>
-import axios from 'axios';
 import { mapActions, mapGetters } from 'vuex';
 export default {
   computed: {

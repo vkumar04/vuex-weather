@@ -31,7 +31,7 @@ export const store = new Vuex.Store({
         return state.weatherData = response
       })
       .catch((error) => {
-        console.log(error)
+        alert(error)
       })
     }
   },
